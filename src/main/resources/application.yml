@@ -2,3 +2,5 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost/db_assembly
+server:
+  port: 5000
