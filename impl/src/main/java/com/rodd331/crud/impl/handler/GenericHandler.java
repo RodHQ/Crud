@@ -1,7 +1,6 @@
 package com.rodd331.crud.impl.handler;
 
 import lombok.Generated;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -43,17 +42,6 @@ public class GenericHandler {
                 .cause(exception.getMessage())
                 .timestamp(LocalDateTime.now())
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-                .build();
-    }
-
-    @ExceptionHandler(DuplicateKeyException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ExceptionResponse handlerDuplicateKeyException(DuplicateKeyException exception) {
-        return ExceptionResponse.builder()
-                .name("DuplicateKeyException")
-                .cause("Dados já cadastrados")
-                .timestamp(LocalDateTime.now())
-                .httpStatus(HttpStatus.BAD_REQUEST)
                 .build();
     }
 
