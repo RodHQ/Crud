@@ -7,7 +7,10 @@ mainClassName = 'com.rodd331.crud.CrudApplication'
 dependencies {
     implementation project(':impl')
 }
-
+jar {
+    baseName = 'crud'
+    version = '0.0.1'
+}
 allprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
