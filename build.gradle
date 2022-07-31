@@ -8,8 +8,7 @@ dependencies {
     implementation project(':impl')
 }
 jar {
-    baseName = 'crud'
-    version = '0.0.1'
+    enabled = false
 }
 allprojects {
     apply plugin: 'java'
