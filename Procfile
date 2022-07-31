@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/Crud.jar
+web: java -jar build/libs/crud-0.0.1-SNAPSHOT.jar
