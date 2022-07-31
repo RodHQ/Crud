@@ -41,9 +41,9 @@ public class ApiController {
             @ApiResponse(code = 404, message = "Not found", response = ExceptionResponse.class),
             @ApiResponse(code = 500, message = "Internal server error", response = ExceptionResponse.class)
     })
-    @GetMapping("/user/page/{page}")
-    public UserListResponse listUsers(@PathVariable int page) {
-        return userFacade.allUsers(page);
+    @GetMapping("/")
+    public String listUsers() {
+        return "Teste funcionou!!!";
     }
 
     @ApiOperation(value = "Search for id.")
