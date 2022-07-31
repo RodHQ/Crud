@@ -1,6 +1,5 @@
 plugins {
     id 'org.springframework.boot' version '2.1.4.RELEASE'
-    id "org.sonarqube" version "2.7"
     id 'java'
     id "application"
 }
@@ -12,8 +11,6 @@ dependencies {
 allprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.sonarqube'
-    apply plugin: 'jacoco'
 
     group = 'com.rodd331'
     version = '0.0.1-SNAPSHOT'
@@ -47,18 +44,5 @@ allprojects {
         implementation 'io.springfox:springfox-swagger-ui:2.9.2'
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        testCompile group: 'junit', name: 'junit', version: '4.12'
-    }
-}
-test {
-    useJUnitPlatform()
-
-}
-
-sonarqube {
-    properties {
-        property "sonar.sourceEncoding", "UTF-8"
-        property "sonar.projectKey", "crud"
     }
 }
